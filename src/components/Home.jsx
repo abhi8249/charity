@@ -15,6 +15,13 @@ import {
   Clock,
 } from "lucide-react";
 import hero1 from "../../public/hero1.jpg";
+import VideoSliderSection from "./VideoSliderSection";
+import BestWorksSection from "./BestWorksSection";
+import image3 from "../../public/image3.jpeg";
+import image1 from "../../public/image1.jpeg";
+import image2 from "../../public/image2.jpeg";
+import image6 from "../../public/image6.jpg";
+import video1 from "../../public/video1.mp4";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -33,30 +40,26 @@ const Home = () => {
     {
       id: 1,
       title: "Food Distribution",
-      image:
-        "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: image3,
       description: "Feeding the hungry and needy",
     },
     {
       id: 2,
-      title: "Education Support",
-      image:
-        "https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      title: "Cow shed & Care",
+      image: image6,
       description: "Supporting education for underprivileged children",
     },
     {
       id: 3,
-      title: "Medical Camps",
-      image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      description: "Free medical assistance to rural areas",
+      title: "Blood donation Camps",
+      image: image1,
+      description: "Free blood donation assistance to rural areas",
     },
     {
       id: 4,
-      title: "Spiritual Guidance",
-      image:
-        "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      description: "Spiritual counseling and guidance",
+      title: "Forest Conservation",
+      image: image2,
+      description: "Protecting and preserving natural habitats",
     },
     {
       id: 5,
@@ -189,116 +192,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
-      {/* Top Action Bar */}
-      <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white py-2 px-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="text-sm font-medium">Achyutananda Seva Ashram</div>
-          <div className="flex space-x-4">
-            <Facebook className="w-5 h-5 hover:text-orange-200 cursor-pointer transition-colors" />
-            <Youtube className="w-5 h-5 hover:text-orange-200 cursor-pointer transition-colors" />
-            <Instagram className="w-5 h-5 hover:text-orange-200 cursor-pointer transition-colors" />
-            <Globe className="w-5 h-5 hover:text-orange-200 cursor-pointer transition-colors" />
-          </div>
-        </div>
-      </div>
-
-      {/* Navigation Bar */}
-      <nav className="bg-white shadow-lg sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
-            {/* Logo */}
-            <div className="flex items-center space-x-3">
-              {/* <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">ॐ</span>
-              </div> */}
-              <img
-                src="./logo.jpg"
-                alt=""
-                className="w-12 h-12 rounded-full flex items-center justify-center"
-              />
-              <div>
-                <h1 className="text-xl font-bold text-gray-800">
-                  Achyutananda
-                </h1>
-                <p className="text-sm text-orange-600">Seva Ashram</p>
-              </div>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
-              <a
-                href="#home"
-                className="text-gray-700 hover:text-orange-600 font-medium transition-colors"
-              >
-                Home
-              </a>
-              <a
-                href="#about"
-                className="text-gray-700 hover:text-orange-600 font-medium transition-colors"
-              >
-                About Us
-              </a>
-              <a
-                href="#gallery"
-                className="text-gray-700 hover:text-orange-600 font-medium transition-colors"
-              >
-                Gallery
-              </a>
-              <a
-                href="#contact"
-                className="text-gray-700 hover:text-orange-600 font-medium transition-colors"
-              >
-                Contact Us
-              </a>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
-          </div>
-
-          {/* Mobile Navigation */}
-          {mobileMenuOpen && (
-            <div className="md:hidden bg-white border-t">
-              <div className="py-2">
-                <a
-                  href="#home"
-                  className="block px-4 py-2 text-gray-700 hover:bg-orange-50"
-                >
-                  Home
-                </a>
-                <a
-                  href="#about"
-                  className="block px-4 py-2 text-gray-700 hover:bg-orange-50"
-                >
-                  About Us
-                </a>
-                <a
-                  href="#gallery"
-                  className="block px-4 py-2 text-gray-700 hover:bg-orange-50"
-                >
-                  Gallery
-                </a>
-                <a
-                  href="#contact"
-                  className="block px-4 py-2 text-gray-700 hover:bg-orange-50"
-                >
-                  Contact Us
-                </a>
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         {heroImages.map((image, index) => (
@@ -320,18 +213,65 @@ const Home = () => {
           </div>
         ))}
 
+        {/* Hero Content */}
         <div className="absolute inset-0 flex items-center justify-center text-center text-white z-10">
           <div className="max-w-4xl px-4">
             <h2 className="text-5xl md:text-7xl font-bold mb-6 animate-pulse">
               Welcome to Achyutananda Seva Ashram
             </h2>
-            <p className="text-xl md:text-2xl mb-8 opacity-90">
-              Serving humanity with love, compassion, and spiritual guidance
-            </p>
             <button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 flex items-center mx-auto shadow-2xl">
               <Heart className="w-6 h-6 mr-2" />
               Donate Now
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-red-50 text-gray-800">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Side - Image */}
+          <div className="relative">
+            <img
+              src="/aboutus1.jpeg"
+              alt="Achyutananda Seba Ashram"
+              className="rounded-2xl shadow-2xl transform hover:scale-105 transition duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/20 to-red-500/20 rounded-2xl"></div>
+          </div>
+
+          {/* Right Side - Text */}
+          <div className="bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-xl">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-6 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent text-center md:text-left">
+              🌸 About Achyutananda Seba Ashram 🌸
+            </h2>
+
+            <p className="text-lg leading-relaxed opacity-90 text-justify">
+              At the sacred foothills of <strong>Mahendragiri</strong>, where
+              <strong> Parashurama</strong> once performed deep penance and
+              where divine vibrations eternally flow, shines the Achyutananda
+              Seba Ashram – a living sanctuary of devotion, service, and inner
+              awakening.
+            </p>
+
+            <p className="mt-4 text-lg leading-relaxed opacity-90 text-justify">
+              Born from the holy vision of <strong>Bansidhar Baba</strong>,
+              hailing from <strong>Raghunathpur (Jagatsinghpur)</strong>, this
+              Ashram has blossomed into a spiritual lighthouse for countless
+              seekers who thirst for peace, purity, and the eternal path of
+              truth.
+            </p>
+
+            <p className="mt-4 text-lg leading-relaxed opacity-90 text-justify">
+              Carrying forward the timeless message of{" "}
+              <strong>Mahapurusha Achyutananda</strong>, one of Odisha’s revered
+              Panchasakha saints, the Ashram reminds us that:
+            </p>
+
+            <blockquote className="mt-6 italic text-xl font-semibold text-orange-700 border-l-4 border-orange-500 pl-4">
+              💫 “Life finds its highest meaning in selfless service, devotion,
+              and compassion.”
+            </blockquote>
           </div>
         </div>
       </section>
@@ -342,102 +282,37 @@ const Home = () => {
             ✨ Our Best Works
           </h3>
 
-          <div className="relative">
-            {/* Navigation Arrows */}
-            <button
-              onClick={() =>
-                setCenterCard(
-                  (prev) => (prev - 1 + bestWorks.length) % bestWorks.length
-                )
-              }
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-30 bg-white border border-gray-300 hover:bg-gray-100 p-3 rounded-full shadow-md transition"
+          <div className="relative overflow-hidden">
+            {/* Sliding Container */}
+            <div
+              className="flex space-x-6 animate-slide"
+              style={{ width: "max-content" }}
             >
-              <svg
-                className="w-6 h-6 text-gray-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </button>
-
-            <button
-              onClick={() =>
-                setCenterCard((prev) => (prev + 1) % bestWorks.length)
-              }
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-30 bg-white border border-gray-300 hover:bg-gray-100 p-3 rounded-full shadow-md transition"
-            >
-              <svg
-                className="w-6 h-6 text-gray-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-
-            {/* Carousel */}
-            <div className="overflow-hidden">
-              <div
-                className="flex transition-transform duration-700 ease-in-out space-x-6 justify-center"
-                style={{
-                  transform: `translateX(calc(50% - ${
-                    (centerCard % bestWorks.length) * 21 + 10.5
-                  }rem))`,
-                }}
-              >
-                {bestWorks.map((work, index) => (
-                  <div
-                    key={work.id}
-                    className={`w-80 flex-shrink-0 transition-all duration-700 ${
-                      index === centerCard % bestWorks.length
-                        ? "transform scale-110 z-20 shadow-2xl"
-                        : "transform scale-95 opacity-60"
-                    }`}
-                  >
-                    <div className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                      <img
-                        src={work.image}
-                        alt={work.title}
-                        className="w-full h-48 object-cover"
-                      />
-                      <div className="p-6">
-                        <h4 className="text-xl font-bold mb-2 text-gray-800">
-                          {work.title}
-                        </h4>
-                        <p className="text-gray-500 text-sm">
-                          {work.description}
-                        </p>
-                      </div>
+              {[...bestWorks, ...bestWorks].map((work, index) => (
+                <div
+                  key={`${index}-${centerCard}`}
+                  className={`w-80 flex-shrink-0 transition-all duration-500 ease-in-out ${
+                    index === centerCard % bestWorks.length
+                      ? "transform scale-125 z-20 shadow-2xl"
+                      : "transform scale-95 opacity-60"
+                  }`}
+                >
+                  <div className="bg-white rounded-3xl overflow-hidden shadow-md hover:scale-[1.28] transition-transform duration-500 ease-in-out">
+                    <img
+                      src={work.image}
+                      alt={work.title}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="p-6">
+                      <h4 className="text-xl font-bold mb-2 text-gray-800">
+                        {work.title}
+                      </h4>
+                      <p className="text-gray-500 text-sm">
+                        {work.description}
+                      </p>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Dots Indicator */}
-            <div className="flex justify-center mt-8 space-x-2">
-              {bestWorks.map((_, index) => (
-                <div
-                  key={index}
-                  className={`w-3 h-3 rounded-full ${
-                    index === centerCard % bestWorks.length
-                      ? "bg-gray-800"
-                      : "bg-gray-300"
-                  }`}
-                ></div>
+                </div>
               ))}
             </div>
           </div>
@@ -488,13 +363,10 @@ const Home = () => {
               <div className="relative bg-black rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-all duration-300">
                 <video
                   controls
-                  poster="https://images.unsplash.com/photo-1544427920-c49ccfb85579?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                  poster={image3}
                   className="w-full h-[22rem] object-cover rounded-3xl"
                 >
-                  <source
-                    src="https://www.w3schools.com/html/mov_bbb.mp4"
-                    type="video/mp4"
-                  />
+                  <source src={video1} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -535,6 +407,8 @@ const Home = () => {
         </div>
       </section>
 
+      <VideoSliderSection />
+
       {/* What We Do Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -569,13 +443,19 @@ const Home = () => {
       {/* Thoughtful Message Section */}
       <section className="py-20 bg-gradient-to-r from-orange-600 to-red-600 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h3 className="text-3xl font-bold mb-8">A Message of Hope</h3>
+          <h3 className="text-3xl font-bold mb-8">
+            ✨ The Divine Guidance of Bansidhar Baba ✨
+          </h3>
+          <p className="text-lg">
+            Baba is not only a mentor but a living embodiment of humility,
+            sacrifice, and tireless service. His life itself is a prayer –
+            serving parents, serving the poor, uplifting the helpless, and
+            guiding every soul towards truth
+          </p>
           <blockquote className="text-xl md:text-2xl leading-relaxed italic mb-8">
-            "In the service of others, we find our true purpose. Every act of
-            kindness, every moment of compassion, every helping hand extended
-            creates ripples of positive change that touch countless lives.
-            Together, we build a world filled with love, understanding, and
-            spiritual growth."
+            💫 “True spirituality is not in seeking God in far-off temples, but
+            in feeding the hungry, healing the sick, serving the poor, and
+            honoring one’s parents.” – Bansidhar Bab"
           </blockquote>
           <div className="text-lg font-medium opacity-90">
             - Achyutananda Seva Ashram
